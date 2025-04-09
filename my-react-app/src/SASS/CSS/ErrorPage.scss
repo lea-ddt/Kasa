@@ -1,0 +1,25 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  font-family: "Montserrat";
+  gap: 50px;
+}
+
+.error span {
+  font-weight: 700;
+  font-size: 188px;
+  color: #ff6060;
+}
+
+.oups-error {
+  color: #ff6060;
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+}
+
+.accueil-error {
+  padding-bottom: 60px;
+}
