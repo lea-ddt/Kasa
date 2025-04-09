@@ -1,13 +1,17 @@
+%underline {
+  text-decoration: underline;
+}
+
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 45px;
-}
 
-.header img {
-  width: 210px;
-  height: 68px;
+  img {
+    width: 210px;
+    height: 68px;
+  }
 }
 
 .lien-header {
@@ -17,4 +21,17 @@
   gap: 57px;
   list-style: none;
   font-family: "Montserrat";
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      @extend %underline;
+    }
+
+    &.active {
+      @extend %underline;
+    }
+  }
 }

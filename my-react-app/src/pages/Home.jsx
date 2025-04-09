@@ -1,10 +1,11 @@
 import React from "react";
 import Card from "../components/Cards";
+import Banner from "../components/Banner";
 
 const Home = () => {
   return (
     <div>
-      <p>Chey vous partout et ailleurs</p>
+      <Banner />
       <Card />
     </div>
   );

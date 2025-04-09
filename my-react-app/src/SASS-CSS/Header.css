@@ -1,10 +1,13 @@
+.lien-header a.active, .lien-header a:hover {
+  text-decoration: underline;
+}
+
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 45px;
 }
-
 .header img {
   width: 210px;
   height: 68px;
@@ -17,4 +20,8 @@
   gap: 57px;
   list-style: none;
   font-family: "Montserrat";
+}
+.lien-header a {
+  color: black;
+  text-decoration: none;
 }/*# sourceMappingURL=Header.css.map */

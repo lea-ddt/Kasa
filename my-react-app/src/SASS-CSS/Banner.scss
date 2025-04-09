@@ -1,0 +1,24 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 45px;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 25px;
+
+  img {
+    opacity: 50%;
+    position: relative;
+    width: 1240px;
+    height: 223px;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+  p {
+    color: white;
+    position: absolute;
+    font-family: "Montserrat";
+    font-size: 48px;
+    font-weight: 700;
+  }
+}

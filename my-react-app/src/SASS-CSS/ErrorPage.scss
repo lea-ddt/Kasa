@@ -1,3 +1,7 @@
+%color {
+  color: #ff6060;
+}
+
 .error {
   display: flex;
   flex-direction: column;
@@ -5,16 +9,16 @@
   margin-top: 40px;
   font-family: "Montserrat";
   gap: 50px;
-}
 
-.error span {
-  font-weight: 700;
-  font-size: 188px;
-  color: #ff6060;
+  span {
+    font-weight: 700;
+    font-size: 188px;
+    @extend %color;
+  }
 }
 
 .oups-error {
-  color: #ff6060;
+  @extend %color;
   font-weight: 500;
   font-size: 30px;
   text-align: center;
@@ -22,4 +26,5 @@
 
 .accueil-error {
   padding-bottom: 60px;
+  color: black;
 }
