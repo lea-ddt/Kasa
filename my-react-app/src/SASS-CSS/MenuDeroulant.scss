@@ -1,0 +1,48 @@
+.dropdown {
+  width: 75%;
+  max-width: 1023px;
+  margin: 20px auto;
+  font-family: "Montserrat", sans-serif;
+
+  .dropdown-header {
+    background-color: #ff6060;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    span {
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .dropdown-content {
+    background-color: #f7f7f7;
+    color: #000;
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+    font-size: 16px;
+    line-height: 1.6;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

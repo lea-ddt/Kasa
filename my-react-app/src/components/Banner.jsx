@@ -1,12 +1,11 @@
 import React from "react";
-import "../SASS-CSS/Banner.css";
-import paysage from "../assets/paysage.png";
+import "../SASS-CSS/Banner.scss";
 
-const Banner = () => {
+const Banner = ({ image, alt, text, variant }) => {
   return (
-    <div className="banner">
-      <img src={paysage} alt="paysage rocheux avec la mer" />
-      <p>Chez vous partout et ailleurs</p>
+    <div className={`banner ${variant}`}>
+      <img src={image} alt={alt} />
+      {text && <p>{text}</p>}
     </div>
   );
 };

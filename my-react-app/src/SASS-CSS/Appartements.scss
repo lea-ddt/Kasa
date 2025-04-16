@@ -1,0 +1,91 @@
+.deroulant {
+  display: flex;
+  flex-direction: row;
+  gap: 76px;
+  margin: 5px 45px 20px;
+}
+
+.logement {
+  position: relative;
+}
+
+.logement-title {
+  color: #ff6060;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 36px;
+  margin: 0 45px 0 45px;
+  max-width: 70%;
+}
+.logement-location {
+  margin: 0 45px 0 45px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.logement-host {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 18px;
+  text-align: right;
+  margin: 0;
+  position: absolute;
+  top: 11px;
+  right: 115px;
+  width: 90px;
+  color: #ff6060;
+}
+
+.logement-host-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 35px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0 45px 0 0;
+}
+
+.logement-tags {
+  margin: 25px 45px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  background-color: #ff6060;
+  color: white;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 10px;
+  height: 25px;
+  min-width: 115px;
+  align-content: center;
+  padding: 0 5px;
+}
+
+.position {
+  position: relative;
+}
+
+.logement-rating {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: 0px;
+  right: 45px;
+
+  .full-star {
+    color: #ff6060;
+    font-size: 20px;
+  }
+
+  .empty-star {
+    color: #e3e3e3;
+    font-size: 20px;
+  }
+}

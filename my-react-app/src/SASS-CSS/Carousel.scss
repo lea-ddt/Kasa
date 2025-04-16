@@ -1,0 +1,56 @@
+.carousel-container {
+  position: relative;
+  margin: 45px;
+  height: 415px;
+}
+
+.custom-slide {
+  position: relative;
+}
+
+.carousel-slider {
+  height: 415px;
+  border-radius: 25px;
+}
+
+.slide img {
+  height: 415px;
+  object-fit: cover;
+}
+
+.number {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: "Montserrat";
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 70px;
+
+  &.left {
+    left: 20px;
+  }
+
+  &.right {
+    right: 20px;
+  }
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+}
