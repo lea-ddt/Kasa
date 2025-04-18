@@ -23,26 +23,64 @@
       font-size: 18px;
       transition: transform 0.3s ease;
     }
+
+    .chevron-icon {
+      font-size: larger;
+      transition: transform 0.3s ease;
+    }
+
+    .rotated {
+      transform: rotate(-180deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin: 15px 15px;
+    width: auto;
   }
 
   .dropdown-content {
     background-color: #f7f7f7;
     color: #000;
-    padding: 20px;
+    padding: 0 20px;
     border-radius: 0 0 5px 5px;
     font-size: 16px;
     line-height: 1.6;
-    animation: slideDown 0.3s ease forwards;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  .dropdown-content.open {
+    max-height: 500px; /* Ajuste la hauteur maximale pour l'ouvrir */
+    opacity: 1; /* Rendre le contenu visible */
+  }
+
+  .dropdown-content.close {
+    max-height: 0; /* Retourner à une hauteur nulle pour fermer */
+    opacity: 0; /* Rendre le contenu invisible */
   }
 
   @keyframes slideDown {
     from {
       opacity: 0;
-      transform: translateY(-8px);
+      transform: scaleY(0);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+    to {
+      opacity: 0;
+      transform: scaleY(0);
     }
   }
 }

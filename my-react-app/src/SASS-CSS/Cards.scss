@@ -17,6 +17,10 @@
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    background: none;
+    padding: 0;
+    margin: 30px 15px;
+    grid-row-gap: 30px;
   }
 }
 

@@ -2,6 +2,11 @@
   position: relative;
   margin: 45px;
   height: 415px;
+
+  @media (max-width: 768px) {
+    margin: 20px 15px;
+    height: 255px;
+  }
 }
 
 .custom-slide {
@@ -11,11 +16,20 @@
 .carousel-slider {
   height: 415px;
   border-radius: 25px;
+
+  @media (max-width: 768px) {
+    border-radius: 10px;
+    height: 255px;
+  }
 }
 
 .slide img {
   height: 415px;
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: 255px;
+  }
 }
 
 .number {
@@ -28,6 +42,10 @@
   padding: 6px 12px;
   border-radius: 8px;
   font-family: "Montserrat";
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .custom-arrow {
@@ -52,5 +70,9 @@
 
   &:hover {
     transform: translateY(-50%) scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 30px;
   }
 }

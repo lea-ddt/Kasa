@@ -6,7 +6,11 @@ import paysage from "../assets/paysage-propos.png";
 const Propos = () => {
   return (
     <>
-      <Banner image={paysage} alt="paysage rocheux avec la mer" />
+      <Banner
+        image={paysage}
+        alt="paysage rocheux avec la mer"
+        variant="Propos"
+      />
       <div className="apropos-container">
         <Dropdown
           title="Fiabilité"

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import logements from "../logements.json";
+import ErrorPage from "./ErrorPage";
 import MenuDeroulant from "../components/MenuDeroulant";
 import Carousel from "../components/Carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,7 +15,7 @@ const Appartements = () => {
   // Cherche le logement avec cet ID
   const logement = logements.find((logement) => logement.id === id);
 
-  if (!id) return <ErrorPage />;
+  if (!logement) return <ErrorPage />;
 
   return (
     <div className="page-logement">
@@ -55,7 +56,11 @@ const Appartements = () => {
         />
         <MenuDeroulant
           title="Equipments"
-          content={logement.equipments}
+          content={logement.equipments.map((tag, index) => (
+            <span className="equipments" key={index}>
+              {tag}
+            </span>
+          ))}
           className="deroulant"
         />
       </div>

@@ -12,7 +12,6 @@ const Home = () => {
         alt="paysage rocheux avec la mer"
         text="Chez vous, partout et ailleurs"
       />
-
       <Card />
     </div>
   );
