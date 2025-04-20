@@ -1,0 +1,61 @@
+$breakpoint-mobile: 768px;
+$primary: #ff6060;
+
+%font {
+  font-family: "Montserrat";
+}
+
+@mixin flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column-center($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-row($gap: 0) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+}
+
+@mixin dropdown-animation(
+  $name,
+  $from-scale,
+  $to-scale,
+  $from-opacity,
+  $to-opacity
+) {
+  @keyframes #{$name} {
+    from {
+      opacity: $from-opacity;
+      transform: scaleY($from-scale);
+    }
+    to {
+      opacity: $to-opacity;
+      transform: scaleY($to-scale);
+    }
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}

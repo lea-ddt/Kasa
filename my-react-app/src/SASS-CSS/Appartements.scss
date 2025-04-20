@@ -1,13 +1,51 @@
-.deroulant {
-  display: flex;
-  flex-direction: row;
-  gap: 76px;
-  margin: 5px 45px 20px;
+@import "mixins.scss";
 
-  @media (max-width: 768px) {
+.page-logement {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ligne 1 : Titre & Host */
+.logement-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 45px 5px;
+
+  @include responsive($breakpoint-mobile) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    margin: 10px 15px 0;
+  }
+}
+
+/* Ligne 2 : Location, Tags & Rating + Host en responsive */
+.logement-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 45px;
+
+  @include responsive($breakpoint-mobile) {
     flex-direction: column;
-    gap: 0;
-    margin: 0;
+    margin: 10px 15px;
+  }
+}
+
+.rating-host-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 25px;
+
+  @include responsive($breakpoint-mobile) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0;
+    gap: 10px;
   }
 }
 
@@ -16,83 +54,89 @@
 }
 
 .logement-title {
-  color: #ff6060;
-  font-family: "Montserrat";
+  color: $primary;
+  @extend %font;
   font-weight: 500;
   font-size: 36px;
-  margin: 0 45px 0 45px;
-  max-width: 70%;
+  margin: 0;
+  width: 75%;
 
-  @media (max-width: 768px) {
-    margin: 0 15px;
+  @include responsive($breakpoint-mobile) {
     font-size: 18px;
   }
 }
 
 .logement-location {
-  margin: 0 45px 0 45px;
-  font-family: "Montserrat";
+  @extend %font;
   font-weight: 500;
   font-size: 18px;
+  margin: 10px 0 0;
 
-  @media (max-width: 768px) {
-    margin: 15px;
+  @include responsive($breakpoint-mobile) {
     font-size: 14px;
   }
 }
 
 .logement-host {
-  font-family: "Montserrat";
+  @extend %font;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $primary;
   font-weight: 500;
   font-size: 18px;
-  text-align: right;
-  margin: 0;
-  position: absolute;
-  top: 11px;
-  right: 115px;
-  width: 90px;
-  color: #ff6060;
+  position: relative;
 
-  @media (max-width: 768px) {
+  @include responsive($breakpoint-mobile) {
     font-size: 12px;
-    width: 20%;
-    top: 120px;
-    right: 60px;
+    position: static;
+  }
+
+  p {
+    margin: 0;
+    max-width: 80px;
+    position: absolute;
+    top: -35px;
+    right: 80px;
+    text-align: end;
+
+    @include responsive($breakpoint-mobile) {
+      position: static;
+      max-width: 60px;
+    }
   }
 }
 
 .logement-host-img {
-  width: 64px;
-  height: 64px;
+  @include square(64px);
   border-radius: 35px;
   object-fit: cover;
   position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0 45px 0 0;
+  top: -46px;
+  right: 0px;
 
-  @media (max-width: 768px) {
-    width: 32px;
-    height: 32px;
-    margin-right: 15px;
-    top: 120px;
+  @include responsive($breakpoint-mobile) {
+    @include square(32px);
+    position: static;
   }
 }
 
 .logement-tags {
-  margin: 25px 45px 0;
+  margin-top: 15px;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 
-  @media (max-width: 768px) {
-    margin: 10px 15px 60px;
+  @include responsive($breakpoint-mobile) {
+    margin: 10px 0 30px;
+    width: 100%;
   }
 }
 
 .tag {
-  background-color: #ff6060;
+  background-color: $primary;
   color: white;
-  font-family: "Montserrat";
+  @extend %font;
   font-weight: 600;
   font-size: 14px;
   text-align: center;
@@ -103,19 +147,13 @@
   padding: 0 5px;
 }
 
-.position {
-  position: relative;
-}
-
 .logement-rating {
   display: flex;
   gap: 5px;
-  position: absolute;
-  top: 0px;
-  right: 45px;
+  margin-top: 25px;
 
   .full-star {
-    color: #ff6060;
+    color: $primary;
     font-size: 20px;
   }
 
@@ -124,10 +162,37 @@
     font-size: 20px;
   }
 
-  @media (max-width: 768px) {
-    top: 60px;
-    right: 0;
-    left: 15px;
+  @include responsive($breakpoint-mobile) {
+    margin-top: 0;
+  }
+}
+
+.deroulant {
+  @include flex-row($gap: 76px);
+  margin: 5px 45px 20px;
+
+  @include responsive($breakpoint-mobile) {
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+  }
+}
+
+.desktop-only {
+  display: flex;
+
+  @include responsive($breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+
+  @include responsive($breakpoint-mobile) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 }
 

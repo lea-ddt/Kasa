@@ -1,12 +1,8 @@
-%font {
-  font-family: "Montserrat";
-}
+@import "mixins.scss";
 
 .footer {
   background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column-center;
 
   img {
     width: 122px;
@@ -18,7 +14,7 @@
     @extend %font;
     text-align: center;
 
-    @media (max-width: 768px) {
+    @include responsive($breakpoint-mobile) {
       width: 45%;
     }
   }

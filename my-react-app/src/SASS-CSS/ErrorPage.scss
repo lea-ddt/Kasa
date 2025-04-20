@@ -1,27 +1,43 @@
-%color {
-  color: #ff6060;
+@import "mixins.scss";
+
+$font-large-desktop: 188px;
+$font-large-mobile: 96px;
+$font-medium-desktop: 30px;
+$font-medium-mobile: 18px;
+$gap-large: 50px;
+$margin-top-large: 40px;
+$margin-mobile: 30px;
+
+%text-primary {
+  color: $primary;
 }
 
 .error {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-  font-family: "Montserrat";
-  gap: 50px;
+  @include flex-column-center($gap-large);
+  margin-top: $margin-top-large;
+  @extend %font;
 
   span {
     font-weight: 700;
-    font-size: 188px;
-    @extend %color;
+    font-size: $font-large-desktop;
+    @extend %text-primary;
+
+    @include responsive($breakpoint-mobile) {
+      font-size: $font-large-mobile;
+      margin: $margin-mobile;
+    }
   }
 }
 
 .oups-error {
-  @extend %color;
+  @extend %text-primary;
   font-weight: 500;
-  font-size: 30px;
+  font-size: $font-medium-desktop;
   text-align: center;
+
+  @include responsive($breakpoint-mobile) {
+    font-size: $font-medium-mobile;
+  }
 }
 
 .accueil-error {

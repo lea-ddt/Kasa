@@ -1,8 +1,10 @@
+@import "mixins.scss";
+
 .dropdown {
   width: 75%;
   max-width: 1023px;
   margin: 20px auto;
-  font-family: "Montserrat", sans-serif;
+  @extend %font;
 
   .dropdown-header {
     background-color: #ff6060;
@@ -10,9 +12,7 @@
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between-center;
 
     h2 {
       font-size: 18px;
@@ -34,7 +34,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @include responsive(768px) {
     margin: 15px 15px;
     width: auto;
   }
@@ -50,37 +50,18 @@
     max-height: 0;
     opacity: 0;
     transition: max-height 0.3s ease, opacity 0.3s ease;
-  }
 
-  .dropdown-content.open {
-    max-height: 500px; /* Ajuste la hauteur maximale pour l'ouvrir */
-    opacity: 1; /* Rendre le contenu visible */
-  }
-
-  .dropdown-content.close {
-    max-height: 0; /* Retourner à une hauteur nulle pour fermer */
-    opacity: 0; /* Rendre le contenu invisible */
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: scaleY(0);
-    }
-    to {
+    &.open {
+      max-height: 500px;
       opacity: 1;
-      transform: scaleY(1);
+    }
+
+    &.close {
+      max-height: 0;
+      opacity: 0;
     }
   }
 
-  @keyframes slideUp {
-    from {
-      opacity: 1;
-      transform: scaleY(1);
-    }
-    to {
-      opacity: 0;
-      transform: scaleY(0);
-    }
-  }
+  @include dropdown-animation(slideDown, 0, 1, 0, 1);
+  @include dropdown-animation(slideUp, 1, 0, 1, 0);
 }

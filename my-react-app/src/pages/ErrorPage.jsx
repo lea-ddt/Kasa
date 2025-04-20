@@ -7,7 +7,8 @@ function ErrorPages() {
     <div className="error">
       <span>404</span>
       <p className="oups-error">
-        Oups! La page que vous demandez n'existe pas.
+        Oups! La page que <br />
+        vous demandez n'existe pas.
       </p>
       <Link to="/">
         <p className="accueil-error">Retourner sur la page d'accueil</p>
