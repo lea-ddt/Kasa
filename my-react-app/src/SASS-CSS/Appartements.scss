@@ -1,15 +1,13 @@
 @import "mixins.scss";
+@import "Variables.scss";
 
 .page-logement {
   display: flex;
   flex-direction: column;
 }
 
-/* Ligne 1 : Titre & Host */
 .logement-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, space-between, center);
   margin: 15px 45px 5px;
 
   @include responsive($breakpoint-mobile) {
@@ -19,11 +17,8 @@
   }
 }
 
-/* Ligne 2 : Location, Tags & Rating + Host en responsive */
 .logement-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  @include flex(row, space-between, flex-start);
   margin: 0 45px;
 
   @include responsive($breakpoint-mobile) {
@@ -33,16 +28,12 @@
 }
 
 .rating-host-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  @include flex(column, flex-start, flex-end);
   padding-top: 25px;
 
   @include responsive($breakpoint-mobile) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    @include flex(row, space-between, center);
+    width: $width100;
     margin-top: 10px;
     padding: 0;
     gap: 10px;
@@ -56,20 +47,20 @@
 .logement-title {
   color: $primary;
   @extend %font;
-  font-weight: 500;
+  @extend %weight;
   font-size: 36px;
   margin: 0;
   width: 75%;
 
   @include responsive($breakpoint-mobile) {
-    font-size: 18px;
+    font-size: $font-size-18;
   }
 }
 
 .logement-location {
   @extend %font;
-  font-weight: 500;
-  font-size: 18px;
+  @extend %weight;
+  font-size: $font-size-18;
   margin: 10px 0 0;
 
   @include responsive($breakpoint-mobile) {
@@ -83,8 +74,8 @@
   align-items: center;
   gap: 10px;
   color: $primary;
-  font-weight: 500;
-  font-size: 18px;
+  @extend %weight;
+  font-size: $font-size-18;
   position: relative;
 
   @include responsive($breakpoint-mobile) {
@@ -95,9 +86,7 @@
   p {
     margin: 0;
     max-width: 80px;
-    position: absolute;
-    top: -35px;
-    right: 80px;
+    @include absolute-position(-35px, 80px, null, null);
     text-align: end;
 
     @include responsive($breakpoint-mobile) {
@@ -111,9 +100,7 @@
   @include square(64px);
   border-radius: 35px;
   object-fit: cover;
-  position: absolute;
-  top: -46px;
-  right: 0px;
+  @include absolute-position(-45px, 0px, null, null);
 
   @include responsive($breakpoint-mobile) {
     @include square(32px);
@@ -129,7 +116,7 @@
 
   @include responsive($breakpoint-mobile) {
     margin: 10px 0 30px;
-    width: 100%;
+    width: $width100;
   }
 }
 
@@ -137,10 +124,10 @@
   background-color: $primary;
   color: white;
   @extend %font;
-  font-weight: 600;
+  @extend %weight;
   font-size: 14px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: $radius10;
   height: 25px;
   min-width: 115px;
   align-content: center;
@@ -168,7 +155,7 @@
 }
 
 .deroulant {
-  @include flex-row($gap: 76px);
+  @include flex(row, flex-start, stretch, 76px);
   margin: 5px 45px 20px;
 
   @include responsive($breakpoint-mobile) {

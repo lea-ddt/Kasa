@@ -1,32 +1,21 @@
-$breakpoint-mobile: 768px;
-$primary: #ff6060;
-
-%font {
-  font-family: "Montserrat";
+@mixin flex(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $gap: null
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap != null {
+    gap: $gap;
+  }
 }
 
-@mixin flex-between-center {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@mixin flex-column-center($gap: 0) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $gap;
-}
-
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin flex-row($gap: 0) {
-  display: flex;
-  flex-direction: row;
+@mixin grid-columns($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
   gap: $gap;
 }
 
@@ -57,5 +46,22 @@ $primary: #ff6060;
 @mixin responsive($breakpoint) {
   @media (max-width: $breakpoint) {
     @content;
+  }
+}
+
+@mixin absolute-position($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+
+  @if $top != null {
+    top: $top;
+  }
+  @if $right != null {
+    right: $right;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+  @if $left != null {
+    left: $left;
   }
 }

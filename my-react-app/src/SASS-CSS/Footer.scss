@@ -1,8 +1,9 @@
 @import "mixins.scss";
+@import "Variables.scss";
 
 .footer {
   background-color: black;
-  @include flex-column-center;
+  @include flex(column, flex-start, center);
 
   img {
     width: 122px;

@@ -1,7 +1,8 @@
 @import "mixins.scss";
+@import "Variables.scss";
 
 .banner {
-  @include flex-center;
+  @include flex(row, center, center);
   margin: 0 45px;
   background-color: rgba(0, 0, 0, 1);
   border-radius: 25px;
@@ -10,14 +11,14 @@
   img {
     opacity: 0.4;
     position: relative;
-    width: 100%;
+    width: $width100;
     height: 223px;
     object-fit: cover;
     border-radius: 25px;
 
     @include responsive($breakpoint-mobile) {
       height: 111px;
-      border-radius: 10px;
+      border-radius: $radius10;
     }
   }
   p {
@@ -44,6 +45,6 @@
   @include responsive($breakpoint-mobile) {
     height: 111px;
     margin: 0 15px;
-    border-radius: 10px;
+    border-radius: $radius10;
   }
 }

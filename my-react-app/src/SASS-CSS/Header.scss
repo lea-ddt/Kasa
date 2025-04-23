@@ -1,13 +1,8 @@
 @import "mixins.scss";
-
-%underline {
-  text-decoration: underline;
-}
+@import "Variables.scss";
 
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include flex(row, space-between, stretch);
   margin: 45px;
 
   img {
@@ -21,14 +16,12 @@
   }
 
   @include responsive($breakpoint-mobile) {
-    margin: 30px 15px;
+    margin: $margin-responsive;
   }
 }
 
 .lien-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @include flex(row, flex-start, center);
   gap: 57px;
   list-style: none;
   @extend %font;

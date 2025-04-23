@@ -1,17 +1,14 @@
 @import "mixins.scss";
-
-$font-xl: 24px;
-$arrow-size: 70px;
-$arrow-size-mobile: 30px;
+@import "Variables.scss";
 
 .carousel-container {
   position: relative;
   margin: 45px;
-  height: 415px;
+  height: $carousel-height-desktop;
 
   @include responsive($breakpoint-mobile) {
     margin: 20px 15px;
-    height: 255px;
+    height: $carousel-height-mobile;
   }
 }
 
@@ -20,28 +17,26 @@ $arrow-size-mobile: 30px;
 }
 
 .carousel-slider {
-  height: 415px;
+  height: $carousel-height-desktop;
   border-radius: 25px;
 
   @include responsive($breakpoint-mobile) {
-    border-radius: 10px;
-    height: 255px;
+    border-radius: $radius10;
+    height: $carousel-height-mobile;
   }
 }
 
 .slide img {
-  height: 415px;
+  height: $carousel-height-desktop;
   object-fit: cover;
 
   @include responsive($breakpoint-mobile) {
-    height: 255px;
+    height: $carousel-height-mobile;
   }
 }
 
 .number {
-  position: absolute;
-  top: 90%;
-  left: 50%;
+  @include absolute-position(90%, null, null, 50%);
   transform: translate(-50%, -50%);
   color: white;
   font-size: $font-xl;
@@ -55,8 +50,7 @@ $arrow-size-mobile: 30px;
 }
 
 .custom-arrow {
-  position: absolute;
-  top: 50%;
+  @include absolute-position(50%, null, null, null);
   transform: translateY(-50%);
   z-index: 3;
   background: transparent;

@@ -1,19 +1,8 @@
 @import "mixins.scss";
-
-$font-large-desktop: 188px;
-$font-large-mobile: 96px;
-$font-medium-desktop: 30px;
-$font-medium-mobile: 18px;
-$gap-large: 50px;
-$margin-top-large: 40px;
-$margin-mobile: 30px;
-
-%text-primary {
-  color: $primary;
-}
+@import "Variables.scss";
 
 .error {
-  @include flex-column-center($gap-large);
+  @include flex(column, flex-start, center, ($gap-large));
   margin-top: $margin-top-large;
   @extend %font;
 
@@ -31,7 +20,7 @@ $margin-mobile: 30px;
 
 .oups-error {
   @extend %text-primary;
-  font-weight: 500;
+  @extend %weight;
   font-size: $font-medium-desktop;
   text-align: center;
 
