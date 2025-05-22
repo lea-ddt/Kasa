@@ -6,10 +6,11 @@ import "../SASS-CSS/Cards.scss";
 const Cards = () => {
   return (
     <div className="logements">
-      {logements.map((logements) => {
-        const { id, cover, title } = logements;
+      {logements.map((logement) => {
+        const { id, cover, title } = logement;
 
         return (
+          // key obligatoire pour les listes React
           <div className="fiche-logement" key={id}>
             <Link to={`/Appartements/${id}`}>
               <img src={cover} alt={title} />

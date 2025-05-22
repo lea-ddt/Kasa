@@ -4,21 +4,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const Dropdown = ({ title, content }) => {
-  const [open, setOpen] = useState(false);
-  const [animationClass, setAnimationClass] = useState("");
-  const [rotated, setRotated] = useState(false);
+  const [open, setOpen] = useState(false); // détermine si le menu est ouvert ou fermé
+  const [animationClass, setAnimationClass] = useState(""); // détermine la classe CSS utilisée
+  const [rotated, setRotated] = useState(false); // détermine si l'icône du chevron doit être tournée
 
   const toggleDropdown = () => {
     if (open) {
       setAnimationClass("close");
-      setRotated(false); // ⬅️ animation de fermeture du chevron
+      setRotated(false); // animation de fermeture du chevron
       setTimeout(() => {
         setOpen(false);
-      }, 300);
+      }, 300); // laisse le temps à l'animation
     } else {
       setOpen(true);
       setAnimationClass("open");
-      setRotated(true); // ⬅️ animation d’ouverture du chevron
+      setRotated(true); // animation d’ouverture du chevron
     }
   };
 

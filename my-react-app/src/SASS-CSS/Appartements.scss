@@ -11,8 +11,7 @@
   margin: 15px 45px 5px;
 
   @include responsive($breakpoint-mobile) {
-    flex-direction: column-reverse;
-    align-items: flex-start;
+    @include flex(column-reverse, flex-start, flex-start);
     margin: 10px 15px 0;
   }
 }

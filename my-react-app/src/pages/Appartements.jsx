@@ -10,9 +10,9 @@ import { faStar as emptyStar } from "@fortawesome/free-solid-svg-icons";
 import "../SASS-CSS/Appartements.scss";
 
 const Appartements = () => {
-  const { id } = useParams(); // ← récupère l'ID de l'URL
+  const { id } = useParams(); // récupère l'ID de l'URL
 
-  // Cherche le logement avec cet ID
+  // Cherche le logement qui correspond à cet ID
   const logement = logements.find((logement) => logement.id === id);
 
   if (!logement) return <ErrorPage />;
@@ -48,6 +48,7 @@ const Appartements = () => {
           <div className="rating-host-wrap">
             <div className="logement-rating">
               {[...Array(5)].map((_, index) => (
+                // crée un tableau avec 5 éléments undefined
                 <FontAwesomeIcon
                   key={index}
                   icon={index < logement.rating ? fullStar : emptyStar}

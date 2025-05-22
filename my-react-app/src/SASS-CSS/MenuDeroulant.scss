@@ -22,7 +22,6 @@
 
     span {
       font-size: $font-size-18;
-      transition: transform 0.3s ease;
     }
 
     .chevron-icon {
@@ -60,7 +59,4 @@
       @extend %height-opacity;
     }
   }
-
-  @include dropdown-animation(slideDown, 0, 1, 0, 1);
-  @include dropdown-animation(slideUp, 1, 0, 1, 0);
 }

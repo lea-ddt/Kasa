@@ -19,25 +19,6 @@
   gap: $gap;
 }
 
-@mixin dropdown-animation(
-  $name,
-  $from-scale,
-  $to-scale,
-  $from-opacity,
-  $to-opacity
-) {
-  @keyframes #{$name} {
-    from {
-      opacity: $from-opacity;
-      transform: scaleY($from-scale);
-    }
-    to {
-      opacity: $to-opacity;
-      transform: scaleY($to-scale);
-    }
-  }
-}
-
 @mixin square($size) {
   width: $size;
   height: $size;
